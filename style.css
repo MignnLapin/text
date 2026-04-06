@@ -1,0 +1,50 @@
+/* 全局隐藏原生光标 */
+* { cursor: none !important; }
+
+/* 背景径向发光 */
+#glow { 
+    position: fixed; 
+    width: 600px; 
+    height: 600px; 
+    background: radial-gradient(circle, rgba(255, 20, 147, 0.15) 0%, rgba(255, 20, 147, 0) 70%); 
+    border-radius: 50%; 
+    pointer-events: none; 
+    transform: translate(-50%, -50%); 
+    z-index: 1; 
+}
+
+/* 核心中心点 */
+#dot { 
+    position: fixed; 
+    width: 8px; 
+    height: 8px; 
+    background: #ff1493; 
+    border-radius: 50%; 
+    pointer-events: none; 
+    transform: translate(-50%, -50%); 
+    z-index: 1000; 
+    box-shadow: 0 0 15px #ff1493; 
+}
+
+/* 真实光标位置的辅助显示（半透明） */
+#real-cursor { 
+    position: fixed; 
+    width: 6px; 
+    height: 6px; 
+    background: rgba(255, 20, 147, 0.4); 
+    border-radius: 50%; 
+    pointer-events: none; 
+    transform: translate(-50%, -50%); 
+    z-index: 999; 
+    transition: opacity 0.3s; 
+    opacity: 0; 
+}
+
+/* 粒子爆炸效果的样式 */
+.p { 
+    position: fixed; 
+    pointer-events: none; 
+    background: #ff1493; 
+    border-radius: 50%; 
+    z-index: 9999; 
+}
