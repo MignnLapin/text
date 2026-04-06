@@ -1,7 +1,18 @@
-/* 全局隐藏原生光标 */
-* { cursor: none !important; }
+/* 强制隐藏原生光标 */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    cursor: none !important; 
+}
 
-/* 背景径向发光 */
+body { 
+    background: #020202; 
+    overflow: hidden; 
+    color: #fff; 
+}
+
+/* 外部发光层 */
 #glow { 
     position: fixed; 
     width: 600px; 
@@ -13,7 +24,7 @@
     z-index: 1; 
 }
 
-/* 核心中心点 */
+/* 中心圆点 */
 #dot { 
     position: fixed; 
     width: 8px; 
@@ -26,7 +37,7 @@
     box-shadow: 0 0 15px #ff1493; 
 }
 
-/* 真实光标位置的辅助显示（半透明） */
+/* 真实坐标辅助点（半透明） */
 #real-cursor { 
     position: fixed; 
     width: 6px; 
@@ -40,7 +51,7 @@
     opacity: 0; 
 }
 
-/* 粒子爆炸效果的样式 */
+/* 粒子爆炸单元 */
 .p { 
     position: fixed; 
     pointer-events: none; 
